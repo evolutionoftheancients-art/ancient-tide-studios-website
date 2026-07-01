@@ -23,15 +23,15 @@
         <div class="content">
           <div class="inner">
 
-            
-
             <p class="homepage-copy">
               Independent Australian game studio behind
               <strong>Evolution of the Ancients</strong>.
               A multiplayer dinosaur survival game where growth, herds, armour, nesting,
               and legacy shape the fight to survive.
             </p>
-			<img src="images/Primary_logo.png" alt="Evolution of the Ancients logo" class="home-game-logo">
+
+            <img src="images/Primary_logo.png" alt="Evolution of the Ancients logo" class="home-game-logo">
+
           </div>
         </div>
 
@@ -78,7 +78,7 @@
             </li>
 
             <li>
-              <a href="mailto:contact@ancienttidestudios.com">
+              <a href="#contact">
                 Contact
               </a>
             </li>
@@ -87,8 +87,35 @@
 
       </header>
 
-      <!-- Main is kept for the HTML5UP template scripts -->
-      <div id="main"></div>
+      <!-- Main -->
+      <div id="main">
+
+        <!-- Contact -->
+        <article id="contact">
+          <h2 class="major">Contact</h2>
+
+          <p>
+            For press, creator access, business enquiries, or general contact,
+            confirm below to reveal the studio email.
+          </p>
+
+          <div class="human-check-box">
+            <input type="checkbox" id="humanCheck">
+            <label for="humanCheck">I am not a robot</label>
+          </div>
+
+          <ul class="actions stacked">
+            <li>
+              <button id="revealEmailButton" class="button primary" disabled>
+                Reveal Email
+              </button>
+            </li>
+          </ul>
+
+          <p id="contactEmailResult"></p>
+        </article>
+
+      </div>
 
       <!-- Footer -->
       <footer id="footer">
@@ -98,6 +125,30 @@
     </div>
 
     <div id="bg"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const checkbox = document.getElementById("humanCheck");
+        const button = document.getElementById("revealEmailButton");
+        const result = document.getElementById("contactEmailResult");
+
+        if (!checkbox || !button || !result) return;
+
+        checkbox.addEventListener("change", function () {
+          button.disabled = !checkbox.checked;
+        });
+
+        button.addEventListener("click", function () {
+          const user = "contact";
+          const domain = "ancienttidestudios";
+          const tld = "com";
+          const email = user + "@" + domain + "." + tld;
+
+          result.innerHTML =
+            '<a class="button" href="mailto:' + email + '">' + email + '</a>';
+        });
+      });
+    </script>
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
