@@ -1,0 +1,13 @@
+{
+  "name": "ancient-tide-studios-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ancient Tide Studios — static studio website for Cloudflare Pages",
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "dev": "node scripts/serve.mjs"
+  }
+}
